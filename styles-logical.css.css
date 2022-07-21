@@ -1,0 +1,118 @@
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-regular.otf.otf');
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-italic.otf.otf');
+  font-style: italic;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold.otf.otf');
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: charter;
+  src: url('../fonts/charter-bold-italic.otf.otf');
+  font-style: italic;
+  font-weight: bold;
+}
+
+:root{
+font-size: 18px;
+--white30: white;
+--white20: #A5A3A5;
+--white10: #3A3539;
+}
+
+body{
+color: var(--white30);
+font-family: 'Nunito', sans-serif;
+background: #251f24;;
+/*font-family: charter;*/
+}
+
+a{
+  color: var(--white30);
+}
+
+header{
+  font-size: 14px;
+  color: var(--white);
+}
+
+header li{
+  color: var(--white20);
+}
+
+header a {
+  color: var(--white20);
+  text-decoration: none;
+}
+
+header a :hover {
+ color: var(--white);
+}
+
+nav details summary {
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  font-weight: normal;
+}
+
+h1{
+  font-size: 60px;
+}
+
+h2{
+  font-size: 2em;
+}
+
+h3{
+  font-size: 1,5em;
+}
+
+pre{
+  background: var(--white10);
+}
+
+p{
+  color: var(--white20);
+}
+
+.hero{
+  background: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
+  /*background: linear-gradient(3.36deg, #212325 -63.62%, rgba(255, 255, 255, 0) 43.49%), url(patron-1.png);*/
+  /*background-repeat: no-repeat;*/
+  height: 350px;
+}
+
+.section-content{
+counter-reset: titlelist;
+}
+
+.section-content h3{
+  counter-increment: titlelist;
+}
+
+.section-content h3::before{
+  content: counter(titlelist, decimal);
+}
+
+.section-content h3::after{
+content: '';
+width: 32px;
+height: 4px;
+background: var(--white30);
+display: inline-block;
+}
