@@ -1,3 +1,11 @@
+html,body{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+
+
 @font-face {
   font-family: charter;
   src: url('../fonts/charter-regular.otf.otf');
@@ -33,6 +41,10 @@ font-size: 18px;
 --gray10: #616161;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body{
 color: var(--gray30);
 font-family: 'Roboto', sans-serif;
@@ -45,8 +57,17 @@ a{
 }
 
 header{
-  font-size: 14px;
+  font-size: 16px;
   color: var(--gray10);
+  position: relative;
+  width: 188px;
+  top: 64px;
+  left: -232px;
+  /*z-index: 1;*/
+  /*border: 1px solid red;*/
+  /*position: absolute;
+  position: fixed;
+  position: sticky;*/
 }
 
 header a {
@@ -60,17 +81,23 @@ header a :hover {
 
 nav details summary {
   font-weight: bold;
+  line-height: 24px;
+}
+
+header li {
+  margin-bottom: 16px;
 }
 
 h1{
   font-size: 60px;
   margin-top: 64px;
   margin-bottom: 16px;
+  font-weight: normal;
 }
 
-h1 + p{
+/*h1 + p{
   margin-bottom: 64px;
-}
+}*/
 
 hr{
   margin: 64px 0;
@@ -89,15 +116,57 @@ h3{
   margin-top: 16px;
   margin-bottom: 24px;
   font-weight: normal;
+  width: 200px;
+  padding: 20px;
+  /*border: 1px solid red;*/
+  box-sizing: border-box;
 }
 
 pre{
   background: #FEC62E;
+  padding: 40px;
+  font-family: "roboto";
+  line-height: 24px;
 }
 
 
 blockquote{
+  font-size: 24px;
   margin: 32px 0;
+  padding-left: 16px;
+  line-height: 24px;
+  border-left: 1px solid var(--gray30);
+}
+blockquote span{
+  color: var(--gray10);
+}
+
+.hero{
+  position: relative;
+}
+
+blockquote span::before{
+  content:"-";
+}
+
+
+main{
+  /*background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../images/pattern.png.png');*/
+}
+
+.wrapper{
+  width: 902px;
+  margin: auto;
+}
+
+.main-content{
+  padding: 20px;
+  background: white;
+}
+
+.debug{
+ /*border: 1px solid red;*/
+ /*background: red;*/
 }
 
 
@@ -137,16 +206,22 @@ counter-reset: titlelist;
 
 .section-content h3{
   counter-increment: titlelist;
+  /*background: red;*/
+  padding-bottom: 8px;
 }
 
 .section-content h3::before{
-  content: counter(titlelist, decimal);
+  content: counter(titlelist, decimal) ". ";
 }
 
 .section-content h3::after{
 content: '';
-width: 32px;
+width: 80px;
 height: 4px;
 background: var(--gray30);
 display: inline-block;
+position: absolute;
+left: 0;
+right: 0;
 }
+
